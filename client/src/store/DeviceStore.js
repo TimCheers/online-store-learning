@@ -18,7 +18,7 @@ export class DeviceStore {
             id: 3, name: "Afdiuiq8", price: 372731, rating: 0, img: "5d8a0c7f-4c53-4d8a-bd2e-16e02866c814.jpg",
         },]
         this._selectedType = {}
-        this._selectedBrand ={}
+        this._selectedBrand = {}
         makeAutoObservable(this);
     }
 
@@ -36,9 +36,12 @@ export class DeviceStore {
 
     setSelectedType(type) {
         this._selectedType = type;
+        console.log("Selected type changed: " + this._selectedType.name);
     }
+
     setSelectedBrand(brand) {
         this._selectedBrand = brand;
+        console.log("Selected brand changed: " + this._selectedBrand.name);
     }
 
     get types() {
@@ -56,6 +59,7 @@ export class DeviceStore {
     get selectedType() {
         return this._selectedType;
     }
+
     get selectedBrand() {
         return this._selectedBrand;
     }
